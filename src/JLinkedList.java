@@ -85,7 +85,7 @@ public class JLinkedList
 		{
 			int CTA = 0;
 			Node current = cabeca;
-			while(CTA < (tamanho-1)) 
+			while(current.getProximo().getProximo() != null) 
 			{
 				current = current.getProximo();
 				CTA++;
@@ -106,11 +106,48 @@ public class JLinkedList
 		{
 			System.out.println("A lista é:");
 			Node current = cabeca;
-			while(current.getProximo() != null) 
+			while(current != null) 
 			{
 				System.out.println("\n" + current.getElemento());
 				current = current.getProximo();
 			}
 		}
+	}
+	public void inverteLista () 
+	{
+		Node alterado = cabeca;
+		try 
+		{
+			Node base = getLast();
+			Node Primeiro = base;
+			while(base != alterado) 
+			{
+				while(alterado.getProximo() != base) 
+				{
+					alterado = alterado.getProximo();
+				}
+				base.setProximo(alterado);
+				base = base.getProximo();
+				base.setProximo(null);
+				alterado = cabeca;
+			}
+			cabeca = Primeiro;
+		}
+		catch (UnderflowException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	public int meioLista() 
+	{
+		int meio = (int) (tamanho/2);
+		Node current = cabeca;
+		while(meio > 0) 
+		{
+			current = current.getProximo();
+			meio--;
+		}
+		System.out.println("Nó do meio = " + current.getElemento());
+		return meio = (int)tamanho/2;
 	}
 }
