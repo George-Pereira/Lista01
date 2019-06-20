@@ -17,17 +17,22 @@ public class Operacoes
 						iguais[CTA] = true;
 						break;
 				}
+				else if(currentB.getProximo() == null && currentB.getElemento() != currentA.getElemento()) 
+				{
+					iguais[CTA] = false;
+				}
 				currentB = currentB.getProximo();
 			}
 			currentA = currentA.getProximo();
 			currentB = list2.cabeca;
 			CTA++;
 		}
-		for(CTA = 0; CTA< iguais.length; CTA++) 
+		for(CTA = 0; CTA < iguais.length; CTA++) 
 		{
 			if(iguais[CTA] == false) 
 			{
 				vetor = false;
+				break;
 			}
 			else 
 			{
