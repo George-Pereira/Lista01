@@ -18,7 +18,7 @@ public class Main
 			lista.InserirUltimo(new Node("T"));
 			lista.InserirUltimo(new Node("E"));
 			lista.InserirUltimo(new Node("C"));
-			lista.InserirPrimeiro(new Node("3º"));
+			lista.InserirPrimeiro(new Node("º"));
 			lista2.InserirPrimeiro(new Node("F"));
 			lista2.InserirUltimo(new Node("A"));
 			lista2.InserirUltimo(new Node("T"));
